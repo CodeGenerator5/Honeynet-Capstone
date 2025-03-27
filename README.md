@@ -7,14 +7,14 @@ This project documents the design, deployment, and experimentation of a Honeynet
 ⸻
 
 Table of Contents
-	1.	Objectives
-	2.	Network Architecture
-	3.	Tools and Technologies Used
-	4.	Deployment Process
-	5.	Steps Taken
-	6.	Results and Observations
-	7.	Challenges Encountered
-	8.	Conclusion and Future Work
+	1. Objectives
+ 	2. Network Architecture
+  	3. Tools and Technologies Used
+	4. Deployment Process
+	5. Steps Taken
+	6. Results and Observations
+	7. Challenges Encountered
+	8. Conclusion and Future Work
 
 ⸻
 
