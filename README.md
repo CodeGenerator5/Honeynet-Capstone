@@ -47,15 +47,15 @@
 
 - **Virtualization**: VirtualBox / VMware
 - **Monitoring & Analysis**: Wireshark, Zeek (Bro), tcpdump
-- **Honeypots**: Cowrie, Dionaea, Honeyd _(confirm which were used)_
-- **Sandboxing**: Cuckoo Sandbox / Remnux / FLARE VM _(confirm choice)_
-- **Operating Systems**: Kali Linux, Metasploitable2, Ubuntu Server, Windows 10 _(confirm which OSes were used)_
+- **Honeypots**: Cowrie, Dionaea, Honeyd  
+- **Sandboxing**: Cuckoo Sandbox / Remnux / FLARE VM  
+- **Operating Systems**: Kali Linux, Metasploitable2, Ubuntu Server, Windows 10  
 
 ---
 
 ## T-Pot Honeynet Deployment Process: Blue Team & Red Team Machine Setup
 
-## 📘 Blue Team VM Setup (Ubuntu Server)
+### 📘 Blue Team VM Setup (Ubuntu Server)
 
 ### 📥 Prerequisites
 
@@ -93,28 +93,28 @@ Use these settings during the unattended install:
 
 ### 🔐 UFW Firewall Rules (on the VM)
 
-bash:
-sudo ufw reset
-sudo ufw default deny incoming
-sudo ufw default allow outgoing
-sudo ufw allow from 192.168.100.0/24 to any port 22      # Allow SSH for internal red team testing
-sudo ufw allow from 192.168.100.10 to any port 64297/tcp # Allow T-Pot dashboard access from Blue Team machine only
-sudo ufw enable
+bash:  
+sudo ufw reset  
+sudo ufw default deny incoming  
+sudo ufw default allow outgoing  
+sudo ufw allow from 192.168.100.0/24 to any port 22  
+sudo ufw allow from 192.168.100.10 to any port 64297/tcp  
+sudo ufw enable  
 
 
 ### 🔧 First Time Setup on VM
-sudo apt update && sudo apt upgrade -y
-sudo apt install git
-sudo apt install openssh-server
-sudo systemctl enable ssh
-sudo systemctl start ssh
+sudo apt update && sudo apt upgrade -y  
+sudo apt install git  
+sudo apt install openssh-server  
+sudo systemctl enable ssh  
+sudo systemctl start ssh  
 
 
 ### 🐙 Clone and Install T-Pot
-git clone https://github.com/telekom-security/tpotce
-cd tpotce
-chmod +x install.sh
-./install.sh
+git clone https://github.com/telekom-security/tpotce  
+cd tpotce  
+chmod +x install.sh  
+./install.sh  
 
 
 ### 📊 Access the Dashboard
