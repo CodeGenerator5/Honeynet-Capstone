@@ -118,10 +118,10 @@ chmod +x install.sh
 
 
 ### 📊 Access the Dashboard
-1.	Open Chrome
-2.	Visit: https://127.0.0.1:64297
-3.	Login with the credentials created earlier
-4.	Navigate to Kibana inside the dashboard
+1. Open Chrome
+2. Visit: https://127.0.0.1:64297
+3. Login with the credentials created earlier
+4. Navigate to Kibana inside the dashboard
 
 💡 Note: On VM reboot, verify internal IP with ip a or ifconfig to ensure connectivity.
 
@@ -131,15 +131,15 @@ chmod +x install.sh
 ## 🔴 Red Team Setup (Kali Linux Bare Metal)
 
 📥 Tools & Image
-	•	Download Kali Linux Everything ISO from an official or archived source.
-	•	Download Rufus to create a bootable USB.
+• Download Kali Linux Everything ISO from an official or archived source.
+• Download Rufus to create a bootable USB.
 
 🛠️ Boot and Install Kali
-	1.	Use Rufus to write the Kali ISO to a USB stick.
-	2.	Insert USB into the Red Team machine.
-	3.	Reboot and enter BIOS (F10 or appropriate key).
-	4.	Select USB drive as boot device.
-	5.	Install Kali Linux.
+1. Use Rufus to write the Kali ISO to a USB stick.
+2. Insert USB into the Red Team machine.
+3. Reboot and enter BIOS (F10 or appropriate key).
+4. Select USB drive as boot device.
+5. Install Kali Linux.
 
 🔐 Red Team Login Credentials: Username, Password
 
