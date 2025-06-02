@@ -41,8 +41,6 @@
   - [ ] Cuckoo Sandbox or manual analysis tools
   - [ ] Network monitoring/sniffer tool (Wireshark, tcpdump)
 
-> **Note**: Please provide specific IP schemes, VM names, and any snapshots used if applicable.
-
 ---
 
 ## Tools and Technologies Used
