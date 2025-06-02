@@ -55,32 +55,56 @@
 
 ---
 
-## Deployment Process
+## T-Pot Honeynet Deployment Process: Blue Team & Red Team Machine Setup
 
-### 1. Planning and Design
-- Defined objectives for both honeynet and sandbox.
-- Identified necessary tools and VMs.
-- Planned IP address allocation and VM interconnectivity.
+## 📘 Blue Team VM Setup (Ubuntu Server)
 
-### 2. Environment Setup
-- Installed and configured virtualization platform.
-- Created isolated internal network for sandboxing.
-- Connected honeynet to an external bridged network (with firewall rules).
+### 📥 Prerequisites
 
-### 3. Honeynet Configuration
-- Deployed vulnerable services (e.g., FTP, SSH, HTTP).
-- Enabled logging for all inbound/outbound connections.
-- Installed intrusion detection software (Zeek, Snort).
+- [Download Oracle VirtualBox](https://www.virtualbox.org/)
+- [Download PuTTY](https://www.putty.org/)
+- [Download Ubuntu Server 24.04.2 ISO](https://ubuntu.com/download/server)
 
-### 4. Sandbox Network Setup
-- Installed Windows/Linux VM with malware analysis tools.
-- Ensured no internet connectivity to avoid real-world infections.
-- Installed Cuckoo Sandbox for automated malware execution (if applicable).
+### 💻 Create Virtual Machine (VM)
 
-### 5. Attack Simulation / Waiting for Infections
-- Left honeynet exposed to the internet (bridged or DMZ mode).
-- Captured traffic and logged attacker behavior.
-- Injected sample malware into sandbox manually or via attacker access.
+Configure the VM in VirtualBox with the following specs:
+
+- **Base Memory**: 20,000 MB
+- **Processors**: 5 CPUs
+- **Hard Disk Size**: 120 GB
+
+### ⚙️ Unattended Installation
+
+Use these settings during the unattended install:
+
+- **Username**: `blueteam`  
+- **Password**: `4hack&demos`  
+- **Hostname**: `bluesclues`  
+- **Domain Name**: `tpot.virtualbox.org`
+
+### 🌐 Networking Setup
+
+1. Go to `Settings` > `Network` > `Port Forwarding` and add the following rules:
+
+| Name    | Protocol | Host IP       | Host Port | Guest IP      | Guest Port |
+|---------|----------|---------------|-----------|---------------|------------|
+| SSH     | TCP      | 127.0.0.1     | 2222      | 10.0.2.15     | 64295      |
+| WebUI   | TCP      | 127.0.0.1     | 64297     | 10.0.2.15     | 64297      |
+
+2. Under `Adapter 2`, enable `Bridged Adapter`.
+
+---
+
+### 🔐 UFW Firewall Rules (on the VM)
+
+bash:
+sudo ufw reset
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow from 192.168.100.0/24 to any port 22      # Allow SSH for internal red team testing
+sudo ufw allow from 192.168.100.10 to any port 64297/tcp # Allow T-Pot dashboard access from Blue Team machine only
+sudo ufw enable
+
 
 ---
 
