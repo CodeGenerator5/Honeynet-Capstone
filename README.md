@@ -77,8 +77,6 @@ Configure the VM in VirtualBox with the following specs:
 
 Use these settings during the unattended install:
 
-- **Username**: `blueteam`  
-- **Password**: `4hack&demos`  
 - **Hostname**: `bluesclues`  
 - **Domain Name**: `tpot.virtualbox.org`
 
@@ -110,8 +108,6 @@ sudo ufw enable
 
 ## Steps Taken
 
-> **Note**: This section should be customized with more granular logs or command lines used.
-
 1. Configured VMs with internal IPs: 192.168.X.X
 2. Set up Wireshark on monitoring VM to capture .pcap files.
 3. Opened ports on honeynet (e.g., 21, 22, 80).
@@ -129,8 +125,6 @@ sudo ufw enable
 - Malware sample initiated suspicious outbound DNS requests (in sandbox).
 - Zeek logs revealed HTTP GET requests with potential payload delivery.
 - Wireshark .pcap files confirmed TCP reassembly and suspicious POST requests.
-
-> **Note**: Add actual attacker IPs, timestamps, payload hashes, etc. if available.
 
 ---
 
