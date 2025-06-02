@@ -102,6 +102,47 @@ sudo ufw allow from 192.168.100.10 to any port 64297/tcp # Allow T-Pot dashboard
 sudo ufw enable
 
 
+### 🔧 First Time Setup on VM
+sudo apt update && sudo apt upgrade -y
+sudo apt install git
+sudo apt install openssh-server
+sudo systemctl enable ssh
+sudo systemctl start ssh
+
+
+### 🐙 Clone and Install T-Pot
+git clone https://github.com/telekom-security/tpotce
+cd tpotce
+chmod +x install.sh
+./install.sh
+
+
+### 📊 Access the Dashboard
+1.	Open Chrome
+2.	Visit: https://127.0.0.1:64297
+3.	Login with the credentials created earlier
+4.	Navigate to Kibana inside the dashboard
+
+💡 Note: On VM reboot, verify internal IP with ip a or ifconfig to ensure connectivity.
+
+
+---
+
+## 🔴 Red Team Setup (Kali Linux Bare Metal)
+
+📥 Tools & Image
+	•	Download Kali Linux Everything ISO from an official or archived source.
+	•	Download Rufus to create a bootable USB.
+
+🛠️ Boot and Install Kali
+	1.	Use Rufus to write the Kali ISO to a USB stick.
+	2.	Insert USB into the Red Team machine.
+	3.	Reboot and enter BIOS (F10 or appropriate key).
+	4.	Select USB drive as boot device.
+	5.	Install Kali Linux.
+
+🔐 Red Team Login Credentials: Username, Password
+
 ---
 
 ## Steps Taken
